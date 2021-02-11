@@ -31,6 +31,13 @@ Personnage::Personnage(string nom, int vie, int mana):  m_nom(nom),
                                                         m_vie(vie),
                                                         m_mana(mana){}
 
+Personnage::Personnage(Personnage &const personnageACopier):   m_nom(personnageACopier.m_nom),
+                                                        m_vie(personnageACopier.m_vie),
+                                                        m_mana(personnageACopier.m_mana)
+{
+    m_arme = new Arme(*personnageACopier.m_arme);
+}
+
 Personnage::~Personnage()
 {
     delete m_arme;  //on supprime le pointer vers arme
