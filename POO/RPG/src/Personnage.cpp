@@ -38,6 +38,19 @@ Personnage::Personnage(Personnage &const personnageACopier):   m_nom(personnageA
     m_arme = new Arme(*personnageACopier.m_arme);
 }
 
+Personnage& Personnage::operator=(Personnage const& personnageACopier) 
+{
+    if(this != &personnageACopier)
+    //On vérifie que l'objet n'est pas le même que celui reçu en argument
+    {
+        m_vie = personnageACopier.m_vie;
+        m_mana = personnageACopier.m_mana;
+	delete m_arme;
+        m_arme = new Arme(*(personnageACopier.m_arme));
+    }
+    return *this;
+}
+
 Personnage::~Personnage()
 {
     delete m_arme;  //on supprime le pointer vers arme
@@ -97,4 +110,3 @@ string Personnage::getName() const
 {
     return m_nom;
 }
-

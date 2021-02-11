@@ -20,6 +20,7 @@ class Personnage
     Personnage(std::string nom, int vie, int mana);
 
     Personnage(Personnage &const personnageACopier);    //constructeur de copie
+    Personnage& operator=(Personnage const& personnageACopier); //operator=
 
     ~Personnage();  //destructeur de la classe (ici inutile mais à titre d'exemple)
 
