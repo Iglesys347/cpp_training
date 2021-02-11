@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Arme::Arme(): m_nom("Épée de merde ayant servi à récurer le cul d'un troll"), m_degats(10){}
+Arme::Arme(): m_nom("Épée nulle"), m_degats(10){}
 
 Arme::Arme(string nom, int degats): m_nom(nom), m_degats(degats){}
 

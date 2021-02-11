@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
     {
-        Personnage david("David"), goliath("Goliath", "Épée des milles hémoroïdes", 20);
+        Personnage david("David"), goliath("Goliath", "Planche de bois", 20);
         Personnage frereDeGoliath(goliath); //créé un objet copie exacte de goliath  
 
         goliath.attaquer(david);
@@ -12,7 +12,7 @@ int main()
         goliath.attaquer(david);
         david.attaquer(goliath);
 
-        goliath.changerArme("Une grosse massue du cul", 50);
+        goliath.changerArme("Gros caillou pointu", 50);
         goliath.attaquer(david);
         david.sortBouleDeFeu(goliath);
 
