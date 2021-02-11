@@ -11,7 +11,7 @@ class Personnage
     std::string m_nom;
     int m_vie;
     int m_mana;
-    Arme m_arme;
+    Arme *m_arme;
 
     public: //tout ce qui va suivre sera public
 
