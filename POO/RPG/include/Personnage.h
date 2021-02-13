@@ -7,7 +7,7 @@
 
 class Personnage
 {
-    private:    //tout ce qui suit sera privé (ça l'est déjà par défaut)
+    protected:
     std::string m_nom;
     int m_vie;
     int m_mana;
@@ -19,7 +19,7 @@ class Personnage
     Personnage(std::string nom, std::string nomArme, int degatsArme);    //surcharge de constructeur
     Personnage(std::string nom, int vie, int mana);
 
-    Personnage(Personnage &const personnageACopier);    //constructeur de copie
+    Personnage(Personnage  &personnageACopier);    //constructeur de copie
     Personnage& operator=(Personnage const& personnageACopier); //operator=
 
     ~Personnage();  //destructeur de la classe (ici inutile mais à titre d'exemple)
@@ -27,8 +27,6 @@ class Personnage
     void recevoirDegats(int nbDegats);
 
     void attaquer(Personnage &cible);
-
-    void sortBouleDeFeu(Personnage &cible);
 
     void boirePotionDeVie(int nbPdvARecuperer);
 
@@ -39,6 +37,8 @@ class Personnage
     void afficherEtat() const;
 
     std::string getName() const;
+
+    void sePresenter() const;
 
 };
 #endif

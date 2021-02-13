@@ -31,7 +31,7 @@ Personnage::Personnage(string nom, int vie, int mana):  m_nom(nom),
                                                         m_vie(vie),
                                                         m_mana(mana){}
 
-Personnage::Personnage(Personnage &const personnageACopier):   m_nom(personnageACopier.m_nom),
+Personnage::Personnage(Personnage &personnageACopier):   m_nom(personnageACopier.m_nom),
                                                         m_vie(personnageACopier.m_vie),
                                                         m_mana(personnageACopier.m_mana)
 {
@@ -71,15 +71,6 @@ void Personnage::attaquer(Personnage &cible)
     cible.recevoirDegats(m_arme->getDegats());
 }
 
-void Personnage::sortBouleDeFeu(Personnage &cible)
-{
-    if (m_mana >= 10)
-    {
-        m_mana -= 10;
-        cible.recevoirDegats(20);
-    }
-}
-
 void Personnage::boirePotionDeVie(int nbPdvARecuperer)
 {
     m_vie += nbPdvARecuperer;
@@ -109,4 +100,10 @@ void Personnage::afficherEtat() const
 string Personnage::getName() const
 {
     return m_nom;
+}
+
+void Personnage::sePresenter() const
+{
+    cout << "Bonjour, je m'appelle " << m_nom << "." << endl;
+    cout << "J'ai encore " << m_vie << " points de vie." << endl;
 }
