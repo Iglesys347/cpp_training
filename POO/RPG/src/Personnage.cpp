@@ -7,9 +7,12 @@ using namespace std;
 int const NB_MAX_PDV = 100;
 int const NB_MAX_MANA = 100;
 
+int Personnage::compteur = 0;
+
 //Constructeurs
 Personnage::Personnage(string nom): m_nom(nom), m_vie(NB_MAX_PDV), m_mana(NB_MAX_MANA), m_arme(0)
 {
+    ++compteur;
     m_arme = new Arme();
 }
 /* Equivalent de :
@@ -24,18 +27,23 @@ Personnage::Personnage(string nom, string nomArme, int degatsArme): m_nom(nom),
                                                                     m_mana(NB_MAX_MANA),
                                                                     m_arme(0)
 {
+    ++compteur;
     m_arme = new Arme(nomArme, degatsArme);
 }
 
 Personnage::Personnage(string nom, int vie, int mana):  m_nom(nom),
                                                         m_vie(vie),
-                                                        m_mana(mana){}
+                                                        m_mana(mana)
+{
+    ++compteur;
+}
 
 Personnage::Personnage(Personnage &personnageACopier):   m_nom(personnageACopier.m_nom),
                                                         m_vie(personnageACopier.m_vie),
                                                         m_mana(personnageACopier.m_mana)
 {
     m_arme = new Arme(*personnageACopier.m_arme);
+    ++compteur;
 }
 
 Personnage& Personnage::operator=(Personnage const& personnageACopier) 
@@ -54,6 +62,12 @@ Personnage& Personnage::operator=(Personnage const& personnageACopier)
 Personnage::~Personnage()
 {
     delete m_arme;  //on supprime le pointer vers arme
+    compteur--;
+}
+
+int Personnage::nbInstances()
+{
+    return compteur;
 }
 
 // Méthodes

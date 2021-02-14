@@ -12,6 +12,7 @@ class Personnage
     int m_vie;
     int m_mana;
     Arme *m_arme;
+    static int compteur;
 
     public: //tout ce qui va suivre sera public
 
@@ -39,6 +40,8 @@ class Personnage
     std::string getName() const;
 
     void sePresenter() const;
+
+    static int nbInstances();
 
 };
 #endif

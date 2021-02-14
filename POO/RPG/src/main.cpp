@@ -22,8 +22,12 @@ int main()
     cout << endl << goliath.getName() << endl;
     goliath.afficherEtat();
 
+    cout << endl;
     Guerrier marcel("Marcel");
     marcel.sePresenter();
+
+    cout << endl;
+    cout << "Il y a actuellement : " << Personnage::nbInstances() << " personnages en jeu." << endl;
 
     return 0;   
 }
