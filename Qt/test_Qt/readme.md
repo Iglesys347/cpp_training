@@ -1,7 +1,7 @@
----
-title: Utilisation de Qt en ligne de commande
-author: Iglesys347
----
+[//]: # (Title: Marketing Meeting Notes)  
+[//]: # (Author: Alan Smithee)  
+
+# Utilisation de Qt en ligne de commande
 
 ## Ecrire le code source
 
