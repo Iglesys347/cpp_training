@@ -1,4 +1,7 @@
-# Utilisation de Qt en ligne de commande
+---
+title: Utilisation de Qt en ligne de commande
+author: Iglesys347
+---
 
 ## Ecrire le code source
 
