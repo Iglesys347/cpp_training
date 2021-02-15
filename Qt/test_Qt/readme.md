@@ -1,5 +1,5 @@
-[//]: # (Title: Marketing Meeting Notes)  
-[//]: # (Author: Alan Smithee)  
+[//]: # (Title: Utilisation de Qt en ligne de commande)  
+[//]: # (Author: Iglesys347)  
 
 # Utilisation de Qt en ligne de commande
 
